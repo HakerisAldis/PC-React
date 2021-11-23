@@ -1,0 +1,7 @@
+#textArea {
+    resize: none;
+    overflow-y: hidden;
+    font-size: 14px;
+    line-height: 14px;
+    width: 200px;
+}
