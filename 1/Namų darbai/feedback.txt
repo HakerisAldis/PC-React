@@ -1,0 +1,17 @@
+Funkcionalumas:
+
+- pakeitus minrows i 3 ir max rows i 7, pradzioje rodo su 3 eilutem, bet tik pradejus vesti persoka i 2.
+- Ipastinus teskta neveikia.
+- Pakeitus text area css (pvz: padding: 10px) neveikia.
+- Is esmes viekia visai neblogai.
+
+Kodas:
+
+- node modules neturi būti kartu su source code.
+- es5 kodas taip pat jau yra sukompiliuotas, reiskias source kode jo irgi neturi buti.
+- atsiidarius package.json, toks jaumas kad perdaug dependencies prisirase, nes ju tiek kaip ir nereikia.
+- idomus sprendimas be kabliataski rasyti koda.
+- OnInput -> javascripte funkcijos rasomos is mazosios raides.
+- yra komentuoto kodo
+- ((minRows * lineHeight) + areaHeight - 4) -> 4 siuo atveju magic number
+- OnInput galima butu sugalvoti geresni pavadinima, nesdabar nepasakoma ka ta funkcija darys.

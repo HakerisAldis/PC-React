@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Namų darbai</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="fastLoan.html">Greitoji</a></li>
+                <li><a href="houseLoan.html">Būsto</a></li>
+                <li><a class="active" href="#">Vartojimo</a></li>
+              </ul>              
+        </div>
+        <div class="loanDiv">
+            <div class="loanText">
+                <h1>Vartojimo paskola</h1>
+            </div>
+            <form id="loanForm" class="consumerLoan" onsubmit="return false">
+                <div class="formItem">
+                    <label for="loanSize">Paskolos dydis:</label>
+                    <input type="number" id="loanSize" name="loanSize" placeholder="Eur" required>
+                </div>
+                <div class="formItem">
+                    <label for="loanPeriod">Paskolos terminas:</label>
+                    <input type="number" id="loanPeriod" name="loanPeriod" placeholder="Metai" required>
+                </div>
+                <div class="formItem">
+                    <select id="itemType" name="itemType" required>
+                        <option value="" disabled selected>Daikto tipas</option>
+                        <option value="automobilis">Automobilis</option>
+                        <option value="telefonas">Telefonas</option>
+                        <option value="kompiuteris">Kompiuteris</option>
+                    </select>
+                </div>
+                <div class="formItem">
+                    <input type="submit" value="Skaičiuoti" id="calcHouseLoanBtn">
+                </div>
+            </form>
+            <p id="errorMsg" class="loanText"></p>
+            <h2 id="calculatedLoan" class="loanText"></h2>
+        </div>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>

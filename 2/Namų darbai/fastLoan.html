@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Namų darbai</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a class="active" href="#">Greitoji</a></li>
+                <li><a href="houseLoan.html">Būsto</a></li>
+                <li><a href="consumerLoan.html">Vartojimo</a></li>
+              </ul>              
+        </div>
+        <div class="loanDiv">
+            <div class="loanText">
+                <h1>Greitoji paskola</h1>
+            </div>
+            <form id="loanForm" class="fastLoan" onsubmit="return false">
+                <div class="formItem">
+                    <label for="loanSize">Paskolos dydis:</label>
+                    <input type="number" id="loanSize" name="loanSize" placeholder="Eur" required>
+                </div>
+                <div class="formItem">
+                    <label for="loanPeriod">Paskolos terminas:</label>
+                    <input type="number" id="loanPeriod" name="loanPeriod" placeholder="Mėn." required>
+                </div>
+                <div class="formItem">
+                    <input type="submit" value="Skaičiuoti" id="calculate">
+                </div>
+            </form>
+            <p id="errorMsg" class="loanText"></p>
+            <h2 id="calculatedLoan" class="loanText"></h2>
+        </div>
+        <script src="dist/bundle.js"></script>
+    </body>
+</html>
