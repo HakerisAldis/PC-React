@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Main = () => {
+const Gear = () => {
     return (
         <div>
-            Sveiki visi
+            Gear
         </div>
-    )
+    );
 }
 
-export default Main
+export default Gear
