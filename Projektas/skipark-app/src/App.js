@@ -1,19 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Main from './pages/Main';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Gear from './pages/Gear';
-import Navbar from './components/NavBar';
+import Navbar from './components/layout/NavBar';
+import Router from './routes/router';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Main />} />
-        <Route path="gear" element={<Gear />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Router>
+        <Navbar />
+      </Router>
+    </>
   );
 }
 
