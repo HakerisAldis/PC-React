@@ -7,9 +7,7 @@ const TrackCard = (props) => {
 
     return (
         <div>
-            {isOpened}
-            {level}
-            {name}
+            {`${isOpened}`} {level} {name} 
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import { getDocs, collection, getFirestore, query, orderBy, where, doc } from 'firebase/firestore';
+import { getDocs, collection, getFirestore, query, where, doc } from 'firebase/firestore';
 
 async function getItems (queryItems) {
   const data = await getDocs(query(...queryItems));
@@ -9,16 +9,12 @@ async function getItems (queryItems) {
   return result;
 }
 
-async function get (collectionName, options) {
+async function get (collectionName) {
   const database = getFirestore();
 
   const queryItems = [
     collection(database, collectionName)
   ];
-
-  if (options.orderBy) {
-    queryItems.push(orderBy(...options.orderBy));
-  }
 
   const data = await getItems(queryItems);
   return data;
