@@ -1,8 +1,8 @@
-import React from 'react';
 import FadeIn from 'react-fade-in';
 import Background from '../../components/layout/Background';
 
 const Main = () => {
+
     return (
         <Background>
             <FadeIn transitionDuration={1000}>

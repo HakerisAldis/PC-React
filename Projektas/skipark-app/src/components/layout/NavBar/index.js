@@ -1,8 +1,13 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../constants/contexts';
 import { ROUTES } from '../../../routes';
 import logo from './logo.png';
 
 const Navbar = () => {
+
+    const user = useContext(UserContext);
+
     return (
         <nav className="flex items-center justify-between flex-wrap bg-gray-500 opacity-75 shadow-lg">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
@@ -29,14 +34,20 @@ const Navbar = () => {
                             Bilietai
                         </Link>
                     </div>
-                    <div className='inline ml-2'>
-                        <Link to={ROUTES.LOGIN} className='hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded'>
-                            Prisijungti
-                        </Link>
-                        <Link to={ROUTES.REGISTER} className='hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded'>
-                            Registruotis
-                        </Link>
-                    </div>
+                    {user ?
+                        <div className='inline ml-2'> 
+                            <h4 className='block mt-4 lg:inline-block lg:mt-0 text-black ml-4'>{user.email}</h4>
+                        </div>
+                    :
+                        <div className='inline ml-2'>
+                            <Link to={ROUTES.LOGIN} className='hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded'>
+                                Prisijungti
+                            </Link>
+                            <Link to={ROUTES.REGISTER} className='hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded'>
+                                Registruotis
+                            </Link>
+                        </div>
+                    }
                 </div>
             </div>
         </nav>
