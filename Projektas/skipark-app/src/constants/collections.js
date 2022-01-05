@@ -5,5 +5,6 @@ export const COLLECTIONS = {
     SNOWBOARDBOOTS: 'SnowboardBoots',
     SNOWBOARDS: 'Snowboards',
     TICKETS: 'Tickets',
-    TRACKS: 'Tracks'
+    TRACKS: 'Tracks',
+    USERS: 'Users'
 };

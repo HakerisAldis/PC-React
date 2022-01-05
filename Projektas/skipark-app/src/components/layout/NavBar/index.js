@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../constants/contexts';
 import { ROUTES } from '../../../routes';
+import UserDropdown from '../../userDropdown/userDropdown';
 import logo from './logo.png';
 
 const Navbar = () => {
@@ -36,7 +37,7 @@ const Navbar = () => {
                     </div>
                     {user ?
                         <div className='inline ml-2'> 
-                            <h4 className='block mt-4 lg:inline-block lg:mt-0 text-black ml-4'>{user.email}</h4>
+                            <UserDropdown name={ user.email }/>
                         </div>
                     :
                         <div className='inline ml-2'>
