@@ -1,4 +1,6 @@
-import { getDocs, collection, getFirestore, query, where, doc } from 'firebase/firestore';
+import { getDocs, collection, getFirestore, query, where, doc, setDoc, getDoc } from 'firebase/firestore';
+import { signInWithEmailAndPassword, getAuth, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
+import { COLLECTIONS } from '../constants/collections';
 
 async function getItems (queryItems) {
   const data = await getDocs(query(...queryItems));
@@ -33,7 +35,49 @@ async function getByReference (collectionName, refCollectionName, referenceField
   return data;
 }
 
+async function login (email, password) {
+  const auth = getAuth();
+  const result = await signInWithEmailAndPassword(auth, email, password);
+  return result;
+}
+
+async function register (email, password, city, name, lastname) {
+  const auth = getAuth();
+  const database = getFirestore();
+  const result = await createUserWithEmailAndPassword(auth, email, password).then(cred => {
+    setDoc(doc(database, COLLECTIONS.USERS, cred.user.uid), {
+      name: name,
+      lastname: lastname,
+      city: city
+    });
+  });
+  return result;
+}
+
+async function signOutUser () {
+  const auth = getAuth();
+  const result = await signOut(auth);
+  return result;
+}
+
+async function getById (collectionName, id) {
+  const database = getFirestore();
+
+  const docRef = doc(database, collectionName, id);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return docSnap.data();
+  } else {
+    return null;
+  }
+}
+
 export const firebaseService = {
   get,
-  getByReference
+  getByReference,
+  login,
+  signOutUser,
+  register,
+  getById
 };

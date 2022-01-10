@@ -1,0 +1,16 @@
+.Container{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.Content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+img{
+  width: 100%;
+}
