@@ -80,4 +80,8 @@ export const firebaseService = {
   signOutUser,
   register,
   getById
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> ba94c08257a2bc597ee233fddb32bd9de70ebfe5
