@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Oops from '../pages/Oops';
 
 export default class ErrorBoundary extends React.Component {
   constructor (props) {
@@ -15,7 +16,7 @@ export default class ErrorBoundary extends React.Component {
   render () {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>;
+      return <Oops />;
     }
 
     return this.props.children;

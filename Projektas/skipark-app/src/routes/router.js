@@ -8,6 +8,7 @@ import Tickets from '../pages/Tickets';
 import { ROUTES } from '.';
 import PropTypes from 'prop-types';
 import Snowboards from '../pages/Snowboards';
+import Oops from '../pages/Oops';
 
 function Router ({ children }) {
   return (
@@ -21,6 +22,7 @@ function Router ({ children }) {
         <Route path={ROUTES.TRACKS} element={<Tracks />} />
         <Route path={ROUTES.TICKETS} element={<Tickets />} />
         <Route path={ROUTES.SNOWBAORDS} element={<Snowboards />} />
+        <Route path='/oops' element={<Oops />} />
       </Routes>
     </BrowserRouter>
   );
