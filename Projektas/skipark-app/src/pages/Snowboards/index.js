@@ -1,7 +1,6 @@
 import React from 'react';
-import GearCard from '../../components/dataDisplay/GearCard';
+import ListCard from '../../components/dataDisplay/ListCard';
 import useGetData from '../../hooks/useGetData';
-import { imageService } from '../../services/image';
 import { snowboardService } from '../../services/snowboard';
 
 const Snowboards = () => {
@@ -18,7 +17,7 @@ const Snowboards = () => {
   return (
     <div className='grid grid-cols-4'>
       {gearList.map(snowboard => <div key={snowboard.id}>
-        <GearCard src={imageService.getUrl(snowboard.image)} text={snowboard.name} />
+        <ListCard {...snowboard} />
       </div>)}
     </div>
   );
