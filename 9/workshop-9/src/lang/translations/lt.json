@@ -1,0 +1,8 @@
+{
+  "app.language": "kalba",
+  "login.username": "Prisijungimo vardas",
+  "login.password": "Slaptažodis",
+  "login.login": "Prisijungti",
+  "home.logout": "Atsijungti",
+  "home.hello": "Sveiki, "
+}

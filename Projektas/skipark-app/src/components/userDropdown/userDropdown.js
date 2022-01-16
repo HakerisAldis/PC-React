@@ -1,8 +1,20 @@
 import { userService } from '../../services/user';
 import { Menu, Transition } from '@headlessui/react';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const UserDropdown = ({ name }) => {
+  const navigate = useNavigate();
+
+  async function handleLogout () {
+    try {
+      await userService.signOutUser();
+      navigate('/');
+    } catch (error) {
+      alert(error);
+    }
+  }
+
   return (
     <div className="relative inline-block text-left">
       <Menu>
@@ -55,7 +67,7 @@ const UserDropdown = ({ name }) => {
                   <Menu.Item>
                     {({ active }) => (
                       <button
-                        onClick={userService.signOutUser}
+                        onClick={handleLogout}
                         className={`${
                           active
                             ? 'bg-gray-100 text-gray-900'

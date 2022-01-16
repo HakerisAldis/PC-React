@@ -1,27 +1,24 @@
-import Card from '../../components/Card';
-import Snowboard from './snowboard.png';
-import Skis from './skis.png';
-import Helmet from './helmet.png';
-import SnowboardBoots from './snowboardBoots.png';
-import SkiBoots from './skiBoots.png';
+import GearCard from '../../components/dataDisplay/GearCard';
+import { imageService } from '../../services/image';
+import { IMAGE } from '../../constants/images';
 
 const Gear = () => {
   return (
     <div className='grid grid-cols-4'>
       <div>
-        <Card src={Snowboard} text="Snieglentės" />
+        <GearCard src={imageService.getUrl(IMAGE.SNOWBOARD)} text="Snieglentės" to="snowboards" />
       </div>
       <div>
-        <Card src={Skis} text="Slidės" />
+        <GearCard src={imageService.getUrl(IMAGE.SKIS)} text="Slidės" />
       </div>
       <div>
-        <Card src={Helmet} text="Šalmai" />
+        <GearCard src={imageService.getUrl(IMAGE.HELMET)} text="Šalmai" />
       </div>
       <div>
-        <Card src={SnowboardBoots} text="Snieglentės batai" />
+        <GearCard src={imageService.getUrl(IMAGE.SNOWBOARD_BOOTS)} text="Snieglentės batai" />
       </div>
       <div>
-        <Card src={SkiBoots} text="Slidžių batai" />
+        <GearCard src={imageService.getUrl(IMAGE.SKI_BOOTS)} text="Slidžių batai" />
       </div>
     </div>
   );

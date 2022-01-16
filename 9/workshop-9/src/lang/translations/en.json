@@ -1,0 +1,8 @@
+{
+  "app.language": "lang",
+  "login.username": "Username",
+  "login.password": "Password",
+  "login.login": "Login",
+  "home.logout": "Logout",
+  "home.hello": "Hello, "
+}

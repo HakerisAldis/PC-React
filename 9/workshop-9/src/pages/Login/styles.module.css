@@ -1,0 +1,21 @@
+.input {
+    padding-top: 200px;
+}
+
+.button {
+    background-color: white;
+    border: black;
+    border-width: 1px;
+    text-decoration: none;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.div {
+    width: 20%;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
+    text-align: center;
+}

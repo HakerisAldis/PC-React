@@ -1,0 +1,38 @@
+.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0px;
+}
+
+.dropdown {
+  font-size: larger;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.noBorders {
+  border: none;
+}
+
+.div {
+  width: 20%;
+  height: 500px;
+  margin: auto;
+  background-color: blue;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.padding {
+  padding-top: 150px;
+}
+
+.button {
+  width: 80%;
+  height: 100px;
+  background-color: white;
+  border: black;
+  border-width: 1px;
+  text-decoration: none;
+  padding: 5px;
+  margin-top: 5px;
+}

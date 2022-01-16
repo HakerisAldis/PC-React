@@ -6,3 +6,5 @@ export const firebaseConfig = {
   messagingSenderId: '618052691258',
   appId: '1:618052691258:web:f86047504a153cd4aa9c03'
 };
+
+export const FIREBASE_FILE_STORAGE_URL = 'https://firebasestorage.googleapis.com/v0/b/skipark-f4055.appspot.com/o/';

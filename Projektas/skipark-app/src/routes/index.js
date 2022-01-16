@@ -4,5 +4,6 @@ export const ROUTES = {
   REGISTER: '/register',
   GEAR: '/gear',
   TRACKS: '/tracks',
-  TICKETS: '/tickets'
+  TICKETS: '/tickets',
+  SNOWBAORDS: '/gear/snowboards'
 };
