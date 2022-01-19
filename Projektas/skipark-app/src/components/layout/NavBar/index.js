@@ -27,7 +27,7 @@ const Navbar = () => {
             <Link to={ROUTES.TRACKS} className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white hover:shadow-xl mr-4">
                             Trasos
             </Link>
-            <Link to={ROUTES.GEAR} className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white hover:shadow-xl mr-4">
+            <Link to={ROUTES.GEARSELECT} className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white hover:shadow-xl mr-4">
                             Įranga
             </Link>
             <Link to={ROUTES.TICKETS} className="block mt-4 lg:inline-block lg:mt-0 text-gray-200 hover:text-white hover:shadow-xl">

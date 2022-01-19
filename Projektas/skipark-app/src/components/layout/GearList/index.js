@@ -22,7 +22,7 @@ const GearList = ({ isLoading, gearList }) => {
 
 GearList.propTypes = {
   gearList: PropTypes.array.isRequired,
-  isLoading: PropTypes.object.isRequired
+  isLoading: PropTypes.bool.isRequired
 };
 
 export default GearList;
