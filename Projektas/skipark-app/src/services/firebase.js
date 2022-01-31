@@ -48,7 +48,8 @@ async function register (email, password, city, name, lastname) {
     setDoc(doc(database, COLLECTIONS.USERS, cred.user.uid), {
       name: name,
       lastname: lastname,
-      city: city
+      city: city,
+      isAdmin: false
     });
   });
   return result;

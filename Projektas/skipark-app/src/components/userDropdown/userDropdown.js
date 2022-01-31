@@ -2,6 +2,8 @@ import { userService } from '../../services/user';
 import { Menu, Transition } from '@headlessui/react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import MenuItem from './menuItem';
+import withUserIdent from '../../HOC\'s/withUserIdent';
 
 const UserDropdown = ({ name }) => {
   const navigate = useNavigate();
@@ -20,9 +22,9 @@ const UserDropdown = ({ name }) => {
       <Menu>
         {({ open }) => (
           <>
-            <span className="rounded-md shadow-sm">
+            <span className="rounded-md">
               <Menu.Button className="inline-flex justify-center w-full leading-5 transition duration-150 ease-in-out hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded">
-                <span>{ name }</span>
+                <span>{name}</span>
                 <svg
                   className="w-5 h-5 ml-2 -mr-1"
                   viewBox="0 0 20 20"
@@ -53,29 +55,19 @@ const UserDropdown = ({ name }) => {
                 <div className="py-1">
                   <Menu.Item>
                     {({ active }) => (
-                      <button
-                        className={`${
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700'
-                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
-                      >
-                                    Profilio nustatymai
-                      </button>
+                      <MenuItem active={active}>
+                        Profilio nustatymai
+                      </MenuItem>
                     )}
                   </Menu.Item>
                   <Menu.Item>
                     {({ active }) => (
-                      <button
+                      <MenuItem
+                        active={active}
                         onClick={handleLogout}
-                        className={`${
-                          active
-                            ? 'bg-gray-100 text-gray-900'
-                            : 'text-gray-700'
-                        } flex justify-between w-full px-4 py-2 text-sm leading-5 text-left`}
                       >
-                                    Atsijungti
-                      </button>
+                        Atsijungti
+                      </MenuItem>
                     )}
                   </Menu.Item>
                 </div>
@@ -92,4 +84,4 @@ UserDropdown.propTypes = {
   name: PropTypes.string.isRequired
 };
 
-export default UserDropdown;
+export default withUserIdent(UserDropdown);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { calculateAge } from './calculateAge';
+import { calculateAge, calculateAgeWithMonths } from './calculateAge';
 import Styles from './styles.module.css';
 
 const Home = () => {
@@ -8,8 +8,12 @@ const Home = () => {
   const [age, setAge] = useState('');
 
   function handleOnClick() {
-    const age = calculateAge(input);
-    setAge(age);
+    console.log(input);
+    if (process.env.NODE_ENV === 'production') {
+      setAge(calculateAgeWithMonths(input));
+    }else{
+      setAge(calculateAge(input));
+    }
   }
 
   return (

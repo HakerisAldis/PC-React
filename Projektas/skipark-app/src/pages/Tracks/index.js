@@ -18,7 +18,6 @@ const Tracks = () => {
             Trasos
       {tracks.map(track => <li key={track.id}>
         <TrackCard {...track} />
-        {console.log(track)}
       </li>)}
     </div>
   );

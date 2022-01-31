@@ -11,7 +11,7 @@ const Oops = () => {
                           OOPS!
         </h1>
         <h1 className='text-black text-center'>
-                          Something went wrong!
+                          Įvyko klaida, pabandykit išjungti ir įjungti :)
         </h1>
       </div>
     </div>

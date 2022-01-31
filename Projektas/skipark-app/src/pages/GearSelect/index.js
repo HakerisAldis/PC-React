@@ -1,25 +1,28 @@
 import GearCard from '../../components/dataDisplay/GearCard';
-import { imageService } from '../../services/image';
-import { IMAGE } from '../../constants/images';
 import { ROUTES } from '../../routes';
+import helmet from '../../assets/images/helmet.png';
+import skiBoots from '../../assets/images/skiBoots.png';
+import skis from '../../assets/images/skis.png';
+import snowboard from '../../assets/images/snowboard.png';
+import snowboardBoots from '../../assets/images/snowboardBoots.png';
 
 const GearSelect = () => {
   return (
     <div className='grid grid-cols-4'>
       <div>
-        <GearCard src={imageService.getUrl(IMAGE.SNOWBOARD)} text="Snieglentės" to={`${ROUTES.GEARSELECT}/Snowboards`} />
+        <GearCard src={snowboard} alt="Snieglentė" text="Snieglentės" to={`${ROUTES.GEARSELECT}/Snowboards`} />
       </div>
       <div>
-        <GearCard src={imageService.getUrl(IMAGE.SKIS)} text="Slidės" to={`${ROUTES.GEARSELECT}/Skis`} />
+        <GearCard src={skis} alt="Slidė" text="Slidės" to={`${ROUTES.GEARSELECT}/Skis`} />
       </div>
       <div>
-        <GearCard src={imageService.getUrl(IMAGE.HELMET)} text="Šalmai" to={`${ROUTES.GEARSELECT}/Helmets`} />
+        <GearCard src={helmet} alt="Šalmas" text="Šalmai" to={`${ROUTES.GEARSELECT}/Helmets`} />
       </div>
       <div>
-        <GearCard src={imageService.getUrl(IMAGE.SNOWBOARD_BOOTS)} text="Snieglentės batai" to={`${ROUTES.GEARSELECT}/SnowboardBoots`} />
+        <GearCard src={snowboardBoots} alt="Snieglentės batai" text="Snieglentės batai" to={`${ROUTES.GEARSELECT}/SnowboardBoots`} />
       </div>
       <div>
-        <GearCard src={imageService.getUrl(IMAGE.SKI_BOOTS)} text="Slidžių batai" to={`${ROUTES.GEARSELECT}/SkiBoots`} />
+        <GearCard src={skiBoots} alt="Slidžių batai" text="Slidžių batai" to={`${ROUTES.GEARSELECT}/SkiBoots`} />
       </div>
     </div>
   );

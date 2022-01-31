@@ -11,6 +11,20 @@ async function signOutUser () {
   return result;
 }
 
+async function isAdmin (user) {
+  if (user !== null) {
+    const result = await getById(user.uid);
+    return result.isAdmin;
+  }
+}
+
+async function getUserName (user) {
+  if (user !== null) {
+    const result = await getById(user.uid);
+    return result.name;
+  }
+}
+
 async function register (email, password, city, name, lastname) {
   const result = await firebaseService.register(email, password, city, name, lastname);
   return result;
@@ -25,5 +39,7 @@ export const userService = {
   login,
   signOutUser,
   register,
-  getById
+  getById,
+  isAdmin,
+  getUserName
 };

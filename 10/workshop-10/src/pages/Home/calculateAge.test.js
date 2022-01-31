@@ -1,7 +1,7 @@
 import { calculateAge } from "./calculateAge";
 
 const testDates = [
-  { date: "1990-01-01", expected: 32 },
+  { date: "", expected: 0 },
   { date: "2000-01-01", expected: 22 },
   { date: "2000-02-01", expected: 21 },
   { date: "2000-01-19", expected: 22 },

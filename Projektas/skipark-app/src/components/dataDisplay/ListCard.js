@@ -5,13 +5,13 @@ const ListCard = (props) => {
   const { image, name, length, flex, profile, size } = props;
 
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-lg my-4 items-center hover:shadow-xl mx-auto">
-      <img className="w-1/2 mx-auto" src={imageService.getUrl(image)} alt="Snowboard" />
+    <div className="max-w-xs rounded overflow-hidden border border-slate-50 shadow-lg my-4 items-center hover:shadow-xl mx-auto">
+      <img className="w-1/2 mx-auto pt-2" src={imageService.getUrl(image)} alt={name} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">
           {name}
         </div>
-        <p className="text-gray-700 text-base">
+        <div className="text-gray-700 text-base">
           { length &&
             <div>
               <b>Ilgis:</b> {length} cm <br />
@@ -32,7 +32,7 @@ const ListCard = (props) => {
               <b>Dydis:</b> {size}<br />
             </div>
           }
-        </p>
+        </div>
       </div>
     </div>
   );
@@ -44,11 +44,14 @@ ListCard.propTypes = {
   length: PropTypes.number,
   flex: PropTypes.string,
   profile: PropTypes.string,
-  size: PropTypes.string || PropTypes.number
+  size: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 };
 
 ListCard.defaultProps = {
-  length: '',
+  length: null,
   flex: '',
   profile: '',
   size: ''

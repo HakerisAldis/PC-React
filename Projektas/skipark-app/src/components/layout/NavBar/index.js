@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../constants/contexts';
+import withUserIdent from '../../../HOC\'s/withUserIdent';
 import { ROUTES } from '../../../routes';
 import UserDropdown from '../../userDropdown/userDropdown';
-import logo from './logo.png';
+import logo from '../../../assets/images/logo.png';
 
 const Navbar = () => {
   const user = useContext(UserContext);
@@ -36,7 +37,7 @@ const Navbar = () => {
           </div>
           {user
             ? <div className='inline ml-2'>
-              <UserDropdown name={ user.email }/>
+              <UserDropdown name={user.email}/>
             </div>
             : <div className='inline ml-2'>
               <Link to={ROUTES.LOGIN} className='hover:shadow-xl hover:text-white text-gray-200 py-2 px-1 mx-1 border border-gray-400 rounded'>
@@ -53,4 +54,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default withUserIdent(Navbar);
