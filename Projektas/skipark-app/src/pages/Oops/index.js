@@ -1,11 +1,10 @@
 import React from 'react';
-import { IMAGE } from '../../constants/images';
-import { imageService } from '../../services/image';
+import OopsImage from '../../assets/images/oops.jpg';
 
 const Oops = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-no-repeat bg-cover opacity-50 absolute left-0 bottom-0 -z-50"
-      style={{ backgroundImage: `url(${imageService.getUrl(IMAGE.OOPS)})` }}>
+      style={{ backgroundImage: `url(${OopsImage})` }}>
       <div className='pb-6'>
         <h1 className='text-black font-bold text-5xl text-center'>
                           OOPS!

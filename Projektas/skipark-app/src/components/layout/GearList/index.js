@@ -24,7 +24,7 @@ const GearList = ({ isLoading, gearList, children }) => {
 GearList.propTypes = {
   gearList: PropTypes.array.isRequired,
   isLoading: PropTypes.bool.isRequired,
-  children: PropTypes.element
+  children: PropTypes.object
 };
 
 GearList.defaultProps = {

@@ -1,5 +1,7 @@
 import TrackCard from '../../components/dataDisplay/TrackCard';
+import { IMAGE } from '../../constants/images';
 import useGetData from '../../hooks/useGetData';
+import { imageService } from '../../services/image';
 import { trackService } from '../../services/track';
 
 const Tracks = () => {
@@ -14,11 +16,17 @@ const Tracks = () => {
   }
 
   return (
-    <div>
-            Trasos
-      {tracks.map(track => <li key={track.id}>
-        <TrackCard {...track} />
-      </li>)}
+    <div className='grid grid-cols-2 divide-x'>
+      <div>
+        <div className='grid grid-cols-2'>
+          {tracks.map(track => <div key={track.id}>
+            <TrackCard {...track} />
+          </div>)}
+        </div>
+      </div>
+      <div>
+        <img className="w-1/2 m-auto" src={imageService.getUrl(IMAGE.TRACKS_SCHEME)} alt="Trasų schema" />
+      </div>
     </div>
   );
 };
