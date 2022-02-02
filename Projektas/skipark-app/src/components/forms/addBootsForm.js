@@ -1,7 +1,7 @@
 import React from 'react';
-import { CAMBER, FLEX } from '../../constants/enums';
+import { FLEX } from '../../constants/enums';
 
-const AddSnowBoardForm = () => {
+const AddBootsForm = () => {
   return (
     <>
       <div className="mb-4">
@@ -12,7 +12,7 @@ const AddSnowBoardForm = () => {
       </div>
       <div className="mb-4">
         <label className="block text-black text-sm mb-2" htmlFor="size">
-                                Ilgis (cm)
+                                Dydis
         </label>
         <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="size" type="number" placeholder="Ilgis" required />
       </div>
@@ -22,22 +22,9 @@ const AddSnowBoardForm = () => {
         </label>
         <select className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="flex" required>
           <option value="" selected disabled>Pasirinkite</option>
-          <option value={FLEX.SOFT}>Minkšta</option>
-          <option value={FLEX.MEDIUM}>Vidutinė</option>
-          <option value={FLEX.STIFF}>Kieta</option>
-        </select>
-      </div>
-      <div className="mb-4">
-        <label className="block text-black text-sm mb-2" htmlFor="profile">
-                                Profilis
-        </label>
-        <select className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="profile" required>
-          <option value="" selected disabled>Pasirinkite</option>
-          <option value={CAMBER.CAMBER}>Camber</option>
-          <option value={CAMBER.REVERSE_CAMBER}>Reverse camber</option>
-          <option value={CAMBER.ROCKER}>Rocker</option>
-          <option value={CAMBER.FLAT}>Flat</option>
-          <option value={CAMBER.HYBRID}>Hybrid</option>
+          <option value={FLEX.SOFT}>Minkšti</option>
+          <option value={FLEX.MEDIUM}>Vidutiniai</option>
+          <option value={FLEX.STIFF}>Kieti</option>
         </select>
       </div>
       <div className="mb-4">
@@ -58,4 +45,4 @@ const AddSnowBoardForm = () => {
   );
 };
 
-export default AddSnowBoardForm;
+export default AddBootsForm;

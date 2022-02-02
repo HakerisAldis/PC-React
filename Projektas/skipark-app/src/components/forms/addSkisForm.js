@@ -1,7 +1,7 @@
 import React from 'react';
-import { CAMBER, FLEX } from '../../constants/enums';
+import { CAMBER } from '../../constants/enums';
 
-const AddSnowBoardForm = () => {
+const AddSkisForm = () => {
   return (
     <>
       <div className="mb-4">
@@ -15,17 +15,6 @@ const AddSnowBoardForm = () => {
                                 Ilgis (cm)
         </label>
         <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="size" type="number" placeholder="Ilgis" required />
-      </div>
-      <div className="mb-4">
-        <label className="block text-black text-sm mb-2" htmlFor="flex">
-                                Kietumas
-        </label>
-        <select className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="flex" required>
-          <option value="" selected disabled>Pasirinkite</option>
-          <option value={FLEX.SOFT}>Minkšta</option>
-          <option value={FLEX.MEDIUM}>Vidutinė</option>
-          <option value={FLEX.STIFF}>Kieta</option>
-        </select>
       </div>
       <div className="mb-4">
         <label className="block text-black text-sm mb-2" htmlFor="profile">
@@ -58,4 +47,4 @@ const AddSnowBoardForm = () => {
   );
 };
 
-export default AddSnowBoardForm;
+export default AddSkisForm;

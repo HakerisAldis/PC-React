@@ -15,8 +15,6 @@ const TrackCard = (props) => {
     }
   }, []);
 
-  console.log(isAdmin);
-
   return (
     <div className="max-w-xs rounded overflow-hidden border border-slate-50 shadow-lg my-4 items-center hover:shadow-xl mx-auto">
       <div className="px-6 py-4">

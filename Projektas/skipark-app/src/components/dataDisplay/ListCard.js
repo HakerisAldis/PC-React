@@ -6,7 +6,7 @@ const ListCard = (props) => {
 
   return (
     <div className="max-w-xs rounded overflow-hidden border border-slate-50 shadow-lg my-4 items-center hover:shadow-xl mx-auto">
-      <img className="w-1/2 mx-auto pt-2" src={imageService.getUrl(image)} alt={name} />
+      <img className="w-1/2 max-h-min mx-auto pt-2" src={imageService.getUrl(image)} alt={name} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">
           {name}
@@ -29,7 +29,7 @@ const ListCard = (props) => {
           }
           { size &&
             <div>
-              <b>Dydis:</b> {size}<br />
+              <b>Dydis:</b> <span className='uppercase'>{size}</span><br />
             </div>
           }
         </div>

@@ -1,5 +1,6 @@
 import { getDocs, collection, getFirestore, query, where, doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { signInWithEmailAndPassword, getAuth, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getStorage, ref, uploadBytes } from 'firebase/storage';
 import { COLLECTIONS } from '../constants/collections';
 
 async function getItems (queryItems) {
@@ -7,6 +8,17 @@ async function getItems (queryItems) {
 
   const result = [];
   data.forEach((doc) => result.push({ ...doc.data(), id: doc.id }));
+
+  return result;
+}
+
+async function imageUpload (image, id) {
+  const storage = getStorage();
+  const storageRef = ref(storage, image.name);
+
+  const result = uploadBytes(storageRef, image).then((snapshot) => {
+    console.log('File uploaded!');
+  });
 
   return result;
 }
@@ -92,5 +104,6 @@ export const firebaseService = {
   signOutUser,
   register,
   getById,
-  update
+  update,
+  imageUpload
 };
