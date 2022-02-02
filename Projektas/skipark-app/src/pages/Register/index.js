@@ -85,4 +85,4 @@ const Register = () => {
   );
 };
 
-export default withUserLogedIn(Register);
+export default withUserLogedIn(Register, ROUTES.DEFAULT);

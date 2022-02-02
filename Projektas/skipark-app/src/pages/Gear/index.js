@@ -17,15 +17,16 @@ const Gear = () => {
   const isUserAdmin = async () => await userService.isAdmin(user);
   const [isAdmin] = useGetData(isUserAdmin);
 
-  function test () {
-    console.log('Alio valio');
+  function test (event) {
+    // const { name, size } = event.target.elements;
+    console.log(event);
   }
 
   return (
     <div>
       <GearList gearList={gearList} isLoading={isLoading} >
         {isAdmin &&
-          <AddItemCard onClick={test}/>
+          <AddItemCard onClick={e => test(e)} collection={collection} />
         }
       </GearList>
     </div>

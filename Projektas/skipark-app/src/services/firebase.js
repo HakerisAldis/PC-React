@@ -1,4 +1,4 @@
-import { getDocs, collection, getFirestore, query, where, doc, setDoc, getDoc } from 'firebase/firestore';
+import { getDocs, collection, getFirestore, query, where, doc, setDoc, getDoc, updateDoc } from 'firebase/firestore';
 import { signInWithEmailAndPassword, getAuth, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 import { COLLECTIONS } from '../constants/collections';
 
@@ -20,6 +20,17 @@ async function get (collectionName) {
 
   const data = await getItems(queryItems);
   return data;
+}
+
+async function update (collectionName, id, field, value) {
+  const database = getFirestore();
+
+  const documentRef = doc(database, collectionName, id);
+
+  const result = await updateDoc(documentRef, {
+    [field]: value
+  });
+  return result;
 }
 
 async function getByReference (collectionName, refCollectionName, referenceField) {
@@ -80,5 +91,6 @@ export const firebaseService = {
   login,
   signOutUser,
   register,
-  getById
+  getById,
+  update
 };

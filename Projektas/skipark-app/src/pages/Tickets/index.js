@@ -1,4 +1,6 @@
 import React from 'react';
+import withUserLogedOut from '../../HOC\'s/withUserLogedOut';
+import { ROUTES } from '../../routes';
 
 const Tickets = () => {
   return (
@@ -8,4 +10,4 @@ const Tickets = () => {
   );
 };
 
-export default Tickets;
+export default withUserLogedOut(Tickets, ROUTES.LOGIN);

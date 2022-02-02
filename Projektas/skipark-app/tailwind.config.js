@@ -4,7 +4,11 @@ module.exports = {
     './node_modules/@themesberg/flowbite/**/*.js'
   ],
   theme: {
-    extend: {}
+    extend: {
+      zIndex: {
+        1000: '1000'
+      }
+    }
   },
   plugins: [
     require('@themesberg/flowbite/plugin')

@@ -9,6 +9,12 @@ async function getAll () {
   return result;
 }
 
+async function update (id, field, value) {
+  const result = await firebaseService.update(COLLECTIONS.TRACKS, id, field, value);
+  return result;
+}
+
 export const trackService = {
-  getAll
+  getAll,
+  update
 };

@@ -2,6 +2,7 @@ import { Fragment, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import PlusSign from '../../assets/images/plusSign.png';
 import PropTypes from 'prop-types';
+import AddSnowBoardForm from '../forms/addSnowBoardForm';
 
 const AddItemCard = ({ children, onClick }) => {
   const [open, setOpen] = useState(false);
@@ -58,13 +59,11 @@ const AddItemCard = ({ children, onClick }) => {
                 <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                   <div className="sm:flex sm:items-start">
                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                      <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                      Pridėti naują
+                      <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900 border-b">
+                        Pridėti naują
                       </Dialog.Title>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">
-                        Kaip įdėti tuos input laukus, kurie priklauso šitam daiktui?
-                        </p>
+                        <AddSnowBoardForm />
                       </div>
                     </div>
                   </div>

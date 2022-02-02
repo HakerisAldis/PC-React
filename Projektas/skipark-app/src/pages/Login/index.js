@@ -55,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default withUserLogedIn(Login);
+export default withUserLogedIn(Login, ROUTES.DEFAULT);
