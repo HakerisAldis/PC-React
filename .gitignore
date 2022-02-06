@@ -35,4 +35,7 @@ sketch
 # Support for Project snippet scope
 !.vscode/*.code-snippets
 
+#PDFS
+*.pdf
+
 # End of https://www.toptal.com/developers/gitignore/api/react,visualstudiocode
